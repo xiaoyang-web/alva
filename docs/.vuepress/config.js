@@ -4,7 +4,7 @@ module.exports = config({
   title: "alva-yky",
   description: "A simple blog site",
 
-  dest: "./dist",
+  dest: "public",
 
   head: [
     [
