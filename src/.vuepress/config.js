@@ -23,7 +23,7 @@ module.exports = config({
 
   shouldPrefetch: (filename) => !filename.includes("page-"),
 
-  dest: "dist",
+  dest: "public",
 
   locales: {
     "/": { lang: "zh-CN" },
