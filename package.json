@@ -1,16 +1,119 @@
 {
-  "name": "vuepress-theme-hope-project",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "A project of vuepress-theme-hope",
-  "license": "MIT",
+  "description": "个人博客",
   "scripts": {
-    "build": "vuepress build demo",
-    "clean-dev": "vuepress dev demo --no-cache",
-    "dev": "vuepress dev demo",
-    "eject-theme": "vuepress eject-hope demo"
+    "serve": "vuepress dev src",
+    "cleanServe": "vuepress dev src --no-cache",
+    "build": "vuepress build src",
+    "super:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build src",
+    "lint": "prettier --check --write .",
+    "lint:check": "prettier --check .",
+    "lint-md": "markdownlint **/*.md --ignore node_modules --fix",
+    "lint-md:check": "markdownlint **/*.md --ignore node_modules",
+    "lint-md:style": "remark --quiet .",
+    "lint-md:wording": "textlint ./src/**/*.md",
+    "lint-md:wording:fix": "textlint ./src/**/*.md --fix",
+    "comsol:get-words": "node script/comsol/get-words.js",
+    "test": "echo \"Warning: no test specified\" && exit 0"
+  },
+  "author": "Mr.Hope",
+  "license": "MIT",
+  "keywords": [
+    "vuepress",
+    "personal-blog"
+  ],
+  "resolutions": {
+    "prismjs": "1.23.0"
+  },
+  "dependencies": {
+    "vuepress": "1.8.2",
+    "vuepress-theme-hope": "1.19.0"
   },
   "devDependencies": {
-    "vuepress": "^1.8.2",
-    "vuepress-theme-hope": "^1.19.0"
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "1.0.8",
+    "markdownlint-cli": "0.27.1",
+    "prettier": "2.3.2",
+    "remark-cli": "9.0.0",
+    "remark-footnotes": "3.0.0",
+    "remark-frontmatter": "3.0.0",
+    "remark-lint": "8.0.0",
+    "remark-math": "4.0.0",
+    "remark-preset-lint-consistent": "4.0.0",
+    "remark-preset-lint-markdown-style-guide": "4.0.0",
+    "remark-preset-lint-recommended": "5.0.0",
+    "textlint": "12.0.0",
+    "textlint-filter-rule-allowlist": "4.0.0",
+    "textlint-filter-rule-comments": "1.2.2",
+    "textlint-rule-apostrophe": "2.0.0",
+    "textlint-rule-common-misspellings": "1.0.1",
+    "textlint-rule-en-capitalization": "2.0.3",
+    "textlint-rule-stop-words": "2.0.9",
+    "textlint-rule-terminology": "2.1.5",
+    "textlint-rule-zh-half-and-full-width-bracket": "1.1.0"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "frontmatter",
+      [
+        "footnotes",
+        {
+          "inlineNotes": true
+        }
+      ],
+      "math",
+      "preset-lint-consistent",
+      "preset-lint-recommended",
+      "preset-lint-markdown-style-guide",
+      [
+        "lint-maximum-line-length",
+        false
+      ],
+      [
+        "lint-list-item-spacing",
+        false
+      ],
+      [
+        "lint-list-item-indent",
+        "space"
+      ]
+    ]
+  },
+  "textlint": {
+    "rules": {
+      "@textlint-rule/no-unmatched-pair": true,
+      "apostrophe": true,
+      "common-misspellings": true,
+      "en-capitalization": {
+        "allowHeading": false,
+        "allowLists": false,
+        "severity": "warning"
+      },
+      "stop-words": {
+        "severity": "warning"
+      },
+      "terminology": {
+        "terms": [
+          "Stylus",
+          "VuePress",
+          [
+            "front[- ]matter",
+            "frontmatter"
+          ]
+        ],
+        "severity": "warning"
+      },
+      "zh-half-and-full-width-bracket": {
+        "bracket": "halfWidth"
+      }
+    },
+    "filters": {
+      "allowlist": {
+        "allow": [
+          "/\\$\\$[\\s\\S]*?\\$\\$/m"
+        ]
+      },
+      "comments": true
+    }
   }
 }
