@@ -16,4 +16,6 @@ module.exports = {
   head,
   plugins,
   themeConfig,
+
+  dest: 'public'
 }
