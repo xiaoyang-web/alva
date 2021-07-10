@@ -1,18 +1,16 @@
 {
-  "name": "alva-yky",
+  "name": "vuepress-theme-hope-project",
   "version": "1.0.0",
-  "description": "a simple blog site",
-  "main": "index.js",
-  "repository": "git@github.com:xiaoyang-web/alva.git",
+  "description": "A project of vuepress-theme-hope",
   "license": "MIT",
+  "scripts": {
+    "build": "vuepress build demo",
+    "clean-dev": "vuepress dev demo --no-cache",
+    "dev": "vuepress dev demo",
+    "eject-theme": "vuepress eject-hope demo"
+  },
   "devDependencies": {
     "vuepress": "^1.8.2",
     "vuepress-theme-hope": "^1.19.0"
-  },
-  "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "clean-dev": "vuepress dev docs --no-cache",
-    "eject-theme": "vuepress eject-hope docs"
   }
 }
