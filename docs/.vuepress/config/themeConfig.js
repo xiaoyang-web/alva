@@ -55,17 +55,17 @@ module.exports = {
       {
         iconClass: 'icon-youjian',
         title: '发邮件',
-        link: 'mailto:894072666@qq.com',
+        link: 'mailto:a356510493@hotmail.com',
       },
       {
         iconClass: 'icon-github',
         title: 'GitHub',
-        link: 'https://github.com/xugaoyi',
+        link: 'https://github.com/xiaoyang-web',
       },
       {
         iconClass: 'icon-erji',
         title: '听音乐',
-        link: 'https://music.163.com/#/playlist?id=755597173',
+        link: 'https://music.163.com',
       }
     ],
   },
