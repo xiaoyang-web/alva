@@ -1,12 +1,12 @@
-const { config } = require("vuepress-theme-hope");
+const themeConfig = require('./config/themeConfig');
 
-module.exports = config({
+module.exports = {
+  theme: 'vdoing',
   title: 'alva-yky',
   description: 'A simple blog',
-  themeConfig: {
-    nav: [
-      { text: 'Home', link: '/', icon: "home" }
-    ],
+  markdown: {
+    lineNumbers: true,
   },
+  themeConfig,
   dest: 'public'
-});
+};
