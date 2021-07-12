@@ -1,7 +1,7 @@
 const themeConfig = require('./config/themeConfig');
 
 module.exports = {
-  theme: 'vdoing',
+  theme: require.resolve('../../theme-vdoing'),
   title: 'alva-yky',
   description: 'A simple blog',
   markdown: {

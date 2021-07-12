@@ -1,6 +1,9 @@
 module.exports = {
   nav: [
-    { text: '主页', link: '/' }
+    { text: '主页', link: '/', icon: 'icon-nav-home' },
+    { text: '学习笔记', link: '/note/', icon: 'icon-nav-note'},
+    { text: '软件工具', link: '/tool/', icon: 'icon-nav-tool'},
+    { text: '我的项目', link: '/project/', icon: 'icon-nav-app'}
   ],
   sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
   logo: '/img/logo.png', // 导航栏logo
