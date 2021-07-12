@@ -1,9 +1,27 @@
 module.exports = {
   nav: [
     { text: '主页', link: '/', icon: 'icon-nav-home' },
-    { text: '学习笔记', link: '/note/', icon: 'icon-nav-note'},
-    { text: '软件工具', link: '/tool/', icon: 'icon-nav-tool'},
-    { text: '我的项目', link: '/project/', icon: 'icon-nav-app'}
+    { 
+      text: '学习笔记',
+      link: '/note/',
+      icon: 'icon-nav-note',
+      items: [{
+        text: '基础知识',
+        items: [
+          { text: 'HTML基础教程', link: '/base/html/' },
+          { text: 'CSS基础教程', link: '/base/css/' },
+          { text: 'JS基础教程', link: '/base/js/' },
+          { text: 'VUE基础教程', link: '/base/vue/' }
+        ]
+      }, {
+        text: '进阶知识',
+        items: [
+          { text: 'CSS进阶', link: '/advance/html/' },
+          { text: 'JS进阶', link: '/advance/css/' },
+          { text: 'VUE进阶', link: '/advance/vue/' },
+        ]
+      }]
+    }
   ],
   sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
   logo: '/img/logo.png', // 导航栏logo

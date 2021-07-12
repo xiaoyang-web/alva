@@ -6,9 +6,10 @@
       :aria-label="dropdownAriaLabel"
       @click="toggle"
     >
-      <router-link v-if="item.link" :to="item.link" class="link-title">{{
-        item.text
-      }}</router-link>
+      <router-link v-if="item.link" :to="item.link" class="link-title">
+        <i v-if="item.icon" :class="`iconfont ${item.icon}`" />
+        {{ item.text }}
+      </router-link>
       <span class="title" v-show="!item.link">{{ item.text }}</span>
       <span class="arrow" :class="open ? 'down' : 'right'"></span>
     </button>
