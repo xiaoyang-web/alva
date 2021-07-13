@@ -10,6 +10,10 @@
   },
   "devDependencies": {
     "vuepress": "^1.8.2",
+    "vuepress-plugin-element-ui": "^1.1.0",
     "vuepress-theme-vdoing": "^1.8.3"
+  },
+  "dependencies": {
+    "async-validator": "1.11.5"
   }
 }

@@ -1,5 +1,6 @@
 const head = require('./config/head');
 const themeConfig = require('./config/themeConfig');
+const plugins = require('./config/plugins');
 
 module.exports = {
   theme: require.resolve('../../theme-vdoing'),
@@ -10,6 +11,7 @@ module.exports = {
   },
 
   head,
+  plugins,
   themeConfig,
   dest: 'public'
 };
