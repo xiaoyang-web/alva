@@ -3,6 +3,7 @@ home: true
 # heroImage: /img/web.png
 heroText: alva-yky
 tagline: a simple blog site!
+bannerBg: https://cdn.jsdelivr.net/gh/xiaoyang-web/blog-imgs/images/banner.jpg
 # actionText: 立刻进入 →
 # actionLink: /web/
 # bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
@@ -83,3 +84,19 @@ features: # 可选的
 - **GitHub**: <https://github.com/xugaoyi>
 
 </br>  -->
+::: cardList 2
+```yaml
+- name: 软件工具
+  desc: 自己收集的一些软件工具
+  avatar: https://cdn.jsdelivr.net/gh/xiaoyang-web/blog-imgs/images/tools.jpg # 可选
+  link: https://www.cnblogs.com/miluluyo/ # 可选
+  bgColor: '#CBEAFA' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
+  textColor: '#6854A1' # 可选，默认var(--textColor)
+- name: 学习资源
+  desc: 自己收集的一些学习资源
+  avatar: https://cdn.jsdelivr.net/gh/xiaoyang-web/blog-imgs/images/resource.jpg
+  link: https://xaoxuu.com
+  bgColor: '#718971'
+  textColor: '#fff'
+```
+:::

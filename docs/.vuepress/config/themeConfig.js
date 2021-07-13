@@ -8,10 +8,10 @@ module.exports = {
       items: [{
         text: '基础知识',
         items: [
-          { text: 'HTML基础教程', link: '/base/html/' },
-          { text: 'CSS基础教程', link: '/base/css/' },
-          { text: 'JS基础教程', link: '/base/js/' },
-          { text: 'VUE基础教程', link: '/base/vue/' }
+          { text: 'HTML基础教程', link: '/base/html/', icon: 'icon-html' },
+          { text: 'CSS基础教程', link: '/base/css/', icon: 'icon-css' },
+          { text: 'JS基础教程', link: '/base/js/', icon: 'icon-javascript' },
+          { text: 'VUE基础教程', link: '/base/vue/', icon: 'icon-vue' }
         ]
       }, {
         text: '进阶知识',
@@ -24,7 +24,7 @@ module.exports = {
     }
   ],
   sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
-  logo: '/img/logo.png', // 导航栏logo
+  logo: '/img/logo.svg', // 导航栏logo
   searchMaxSuggestions: 5, // 搜索结果显示最大数
 
   //*** 以下配置是Vdoing主题改动和新增的配置 ***//
@@ -65,7 +65,8 @@ module.exports = {
   },
   blogger: {
     // 博主信息，显示在首页侧边栏
-    avatar: '/img/logo.png',
+    avatar: '/img/logo.svg',
+    avatar_top: 'https://cdn.jsdelivr.net/gh/xiaoyang-web/blog-imgs/images/avatar-top.jpg',
     name: 'alva-yky',
     slogan: '前端界的小菜鸟',
   },

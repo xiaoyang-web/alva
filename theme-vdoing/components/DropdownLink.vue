@@ -10,7 +10,10 @@
         <i v-if="item.icon" :class="`iconfont ${item.icon}`" />
         {{ item.text }}
       </router-link>
-      <span class="title" v-show="!item.link">{{ item.text }}</span>
+      <span class="title" v-show="!item.link">
+        <i v-if="item.icon" :class="`iconfont ${item.icon}`"></i>
+        {{ item.text }}
+      </span>
       <span class="arrow" :class="open ? 'down' : 'right'"></span>
     </button>
 

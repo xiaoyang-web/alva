@@ -57,11 +57,15 @@ h1, h2, h3, h4, h5, h6
         display inline-block
         float right
         padding 1rem 0
+        overflow: hidden
         p
           margin 0
           padding 0 1rem
           transition text-shadow .4s
           text-align center
+          text-overflow ellipsis
+          white-space nowrap
+          overflow hidden
         .name
           margin .2rem 0 .3rem 0
         .desc

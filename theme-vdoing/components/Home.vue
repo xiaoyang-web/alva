@@ -111,6 +111,9 @@
 
     <MainLayout>
       <template #mainLeft>
+
+        <Content class="theme-vdoing-content custom card-box" />
+        
         <!-- 简约版文章列表 -->
         <UpdateArticle
           class="card-box"
@@ -131,8 +134,7 @@
             v-show="Math.ceil(total / perPage) > 1"
           />
         </template>
-
-        <Content class="theme-vdoing-content custom card-box" />
+        
       </template>
 
       <template #mainRight>

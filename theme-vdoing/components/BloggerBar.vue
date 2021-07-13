@@ -1,7 +1,12 @@
 <template>
   <aside class="blogger-wrapper card-box">
     <div class="avatar">
+      <div class="avatar-top" :style="{background: bg}"></div>
       <img :src="blogger.avatar" alt="头像" title="我好看吗" />
+    </div>
+    <div class="blogger">
+      <span class="name">{{ blogger.name }}</span>
+      <span class="slogan">{{ blogger.slogan }}</span>
     </div>
     <div class="icons" v-if="social && social.icons && social.icons.length">
       <a
@@ -14,10 +19,6 @@
         target="_blank"
       />
     </div>
-    <div class="blogger">
-      <span class="name">{{ blogger.name }}</span>
-      <span class="slogan">{{ blogger.slogan }}</span>
-    </div>
   </aside>
 </template>
 
@@ -29,6 +30,13 @@ export default {
     },
     social () {
       return this.$themeConfig.social
+    },
+    bg () {
+      if (!this.$themeConfig.blogger.avatar_top) {
+        return '#718971'
+      } else {
+        return `url(${this.$themeConfig.blogger.avatar_top})`
+      }
     }
   }
 }
@@ -47,9 +55,16 @@ export default {
     @media (max-width 900px)
       // width 205px
       // height 205px
-    img
+    .avatar-top
       width 100%
-      height 100%
+      height 7rem
+      background-repeat no-repeat
+      background-size 100% 100%
+    img
+      display block
+      width 50%
+      height 50%
+      margin -4rem auto 0;
   .icons
     // border 1px solid var(--borderColor)
     border-top none
@@ -66,7 +81,8 @@ export default {
       &:hover
         color $accentColor
   .blogger
-    padding 0.3rem 0.95rem 0 0.95rem
+    padding 1rem 0.95rem
+    text-align center
     .name
       font-size 1.3rem
       display block

@@ -1,3 +1,4 @@
+const head = require('./config/head');
 const themeConfig = require('./config/themeConfig');
 
 module.exports = {
@@ -7,6 +8,8 @@ module.exports = {
   markdown: {
     lineNumbers: true,
   },
+
+  head,
   themeConfig,
   dest: 'public'
 };
