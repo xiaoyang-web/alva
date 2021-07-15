@@ -8,6 +8,28 @@
       <span class="name">{{ blogger.name }}</span>
       <span class="slogan">{{ blogger.slogan }}</span>
     </div>
+
+    <div class="num-wrapper">
+      <div class="item">
+        <router-link to="/archives/">
+          <span class="num">{{ this.$filterPosts.length }}</span>
+          <span>文章</span>
+        </router-link>
+      </div>
+      <div class="item">
+        <router-link to="/categories/">
+          <span class="num">{{ this.$categoriesAndTags.categories.length }}</span>
+          <span>分类</span>
+        </router-link>
+      </div>
+      <div class="item">
+        <router-link to="/tags/">
+          <span class="num">{{ this.$categoriesAndTags.tags.length }}</span>
+          <span>标签</span>
+        </router-link>
+      </div>
+
+    </div>
     <div class="icons" v-if="social && social.icons && social.icons.length">
       <a
         v-for="(item, index) in social.icons"
@@ -24,6 +46,9 @@
 
 <script>
 export default {
+  mounted () {
+    console.log(this.$categoriesAndTags);
+  },
   computed: {
     blogger () {
       return this.$themeConfig.blogger
@@ -66,13 +91,13 @@ export default {
       height 50%
       margin -4rem auto 0;
   .icons
+    display flex
     // border 1px solid var(--borderColor)
     border-top none
     height 35px
     line-height 35px
     a
-      font-size 20px
-      width 33%
+      font-size 24px
       color var(--textColor)
       display block
       float left
@@ -83,10 +108,25 @@ export default {
   .blogger
     padding 1rem 0.95rem
     text-align center
+    border-bottom 1px solid var(--borderColor)
     .name
       font-size 1.3rem
       display block
       margin-bottom 6px
     .slogan
       color var(--textColor)
+  .num-wrapper
+    display flex
+    margin 1rem auto
+    width 80%
+    .item
+      width calc(100% / 3)
+      text-align center
+      a
+        color var(--textColor)
+        &:hover
+          color $accentColor
+        .num
+          display block
+          font-size 20px
 </style>

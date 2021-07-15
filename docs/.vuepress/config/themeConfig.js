@@ -76,7 +76,7 @@ module.exports = {
     // iconfontCssFile: '//at.alicdn.com/t/font_1678482_u4nrnp8xp6g.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自由添加
     icons: [
       {
-        iconClass: 'icon-youjian',
+        iconClass: 'icon-email',
         title: '发邮件',
         link: 'mailto:a356510493@hotmail.com',
       },
@@ -86,9 +86,13 @@ module.exports = {
         link: 'https://github.com/xiaoyang-web',
       },
       {
-        iconClass: 'icon-erji',
-        title: '听音乐',
-        link: 'https://music.163.com',
+        iconClass: 'icon-QQ',
+        title: 'QQ',
+        link: 'http://wpa.qq.com/msgrd?v=3&uin=356510493&site=qq&menu=yes',
+      },{
+        iconClass: 'icon-wechat',
+        title: 'Wechat',
+        link: 'tel:15279052025'
       }
     ],
   },
