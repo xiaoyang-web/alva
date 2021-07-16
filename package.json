@@ -14,6 +14,7 @@
     "vuepress-theme-vdoing": "^1.8.3"
   },
   "dependencies": {
-    "async-validator": "1.11.5"
+    "async-validator": "1.11.5",
+    "vue-typed-js": "^0.1.2"
   }
 }

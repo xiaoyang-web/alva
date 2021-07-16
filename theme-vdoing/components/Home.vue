@@ -23,6 +23,14 @@
           </h1>
           <p v-if="homeData.tagline" class="description">
             {{ homeData.tagline }}
+            <vue-typed-js
+              :strings="[homeData.tagline]" 
+              :loop="true"
+              :typeSpeed="400"
+              :backSpeed="200"
+            >
+              <span class="typing"></span>
+            </vue-typed-js>
           </p>
           <p class="action" v-if="homeData.actionText && homeData.actionLink">
             <NavLink class="action-button" :item="actionLink" />
@@ -342,11 +350,12 @@ export default {
 .home-wrapper
   .banner
     width 100%
-    min-height 450px
-    margin-top $navbarHeight
+    min-height 100vh
+    padding-top $navbarHeight
     color $bannerTextColor
     position relative
     overflow hidden
+    box-sizing border-box
     .banner-conent
       max-width $homePageWidth
       margin 0px auto
@@ -386,7 +395,7 @@ export default {
       // pc端features
       .features
         padding 2rem 0
-        margin-top 2.5rem
+        margin-top 6rem
         display flex
         flex-wrap wrap
         align-items flex-start
@@ -401,8 +410,8 @@ export default {
           // color lighten($bannerTextColor,10%)
           color inherit
           .feature-img
-            width 10rem
-            height 10rem
+            width 8rem
+            height 8rem
             animation heart 1.2s ease-in-out 0s infinite alternate
             animation-play-state paused
           h2
@@ -420,7 +429,7 @@ export default {
           color $accentColor
     // 移动端滑动图标
     .slide-banner
-      margin-top 2rem
+      margin-top 6rem
       .banner-wrapper
         position relative
       .slide-banner-scroll
@@ -437,8 +446,8 @@ export default {
             // color lighten($bannerTextColor,10%)
             color inherit
             .feature-img
-              width 10rem
-              height 10rem
+              width 8rem
+              height 8rem
             h2
               font-size 1.1rem
               font-weight 500
@@ -505,8 +514,8 @@ export default {
             h2
               font-size 1.1rem
             .feature-img
-              width 9rem
-              height 9rem
+              width 7rem
+              height 7rem
 // 719px以下
 @media (max-width $MQMobile)
   .home-wrapper
