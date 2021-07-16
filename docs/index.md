@@ -1,8 +1,10 @@
 ---
 home: true
 # heroImage: /img/web.png
-heroText: alva-yky
-tagline: a simple blog site!
+heroText: 𝓪𝓵𝓿𝓪-𝔂𝓴𝔂
+tagline: 自知则明，自胜则强
+tagline1: 面朝大海，春暖花开
+tagline2: 时光如水，总是无言
 bannerBg: https://cdn.jsdelivr.net/gh/xiaoyang-web/blog-imgs/images/cover.jpg
 # actionText: 立刻进入 →
 # actionLink: /web/

@@ -21,17 +21,16 @@
           <h1 v-if="homeData.heroText" id="main-title">
             {{ homeData.heroText }}
           </h1>
-          <p v-if="homeData.tagline" class="description">
-            {{ homeData.tagline }}
-            <vue-typed-js
-              :strings="[homeData.tagline]" 
-              :loop="true"
-              :typeSpeed="400"
-              :backSpeed="200"
-            >
-              <span class="typing"></span>
-            </vue-typed-js>
-          </p>
+          <vue-typed-js
+            class="description"
+            v-if="homeData.tagline"
+            :strings="[homeData.tagline, homeData.tagline1, homeData.tagline2]" 
+            :loop="true"
+            :typeSpeed="200"
+            :backSpeed="100"
+          >
+            <span class="typing"></span>
+          </vue-typed-js>
           <p class="action" v-if="homeData.actionText && homeData.actionLink">
             <NavLink class="action-button" :item="actionLink" />
           </p>
@@ -102,14 +101,6 @@
                 </a>
               </div>
             </div>
-          </div>
-          <div class="docs-wrapper">
-            <span
-              class="doc"
-              v-for="(item, index) in homeData.features.length"
-              :key="index"
-              :class="{ active: currentPageIndex === index }"
-            ></span>
           </div>
         </div>
       </div>
@@ -349,6 +340,9 @@ export default {
 <style lang="stylus" scoped>
 .home-wrapper
   .banner
+    display flex
+    flex-direction column
+    justify-content center
     width 100%
     min-height 100vh
     padding-top $navbarHeight
@@ -364,7 +358,7 @@ export default {
       overflow hidden
       .hero
         text-align center
-        margin-top 3rem
+        margin-top 10vh
         img
           max-width 100%
           max-height 240px
@@ -372,12 +366,13 @@ export default {
           margin 2rem auto 1.5rem
         h1
           margin 0
-          font-size 3.2rem
+          font-size 4.8rem
         .description, .action
-          margin 1.5rem auto
+          margin 2.4rem auto
         .description
+          justify-content center
           max-width 40rem
-          font-size 1.1rem
+          font-size 2rem
           line-height 1.3
           opacity 0.9
         .action-button
@@ -395,7 +390,7 @@ export default {
       // pc端features
       .features
         padding 2rem 0
-        margin-top 6rem
+        margin-top 10vh
         display flex
         flex-wrap wrap
         align-items flex-start
@@ -410,13 +405,13 @@ export default {
           // color lighten($bannerTextColor,10%)
           color inherit
           .feature-img
-            width 8rem
-            height 8rem
+            width 10rem
+            height 10rem
             animation heart 1.2s ease-in-out 0s infinite alternate
             animation-play-state paused
           h2
             font-weight 500
-            font-size 1.3rem
+            font-size 1.4rem
             border-bottom none
             padding-bottom 0
           p
@@ -429,12 +424,16 @@ export default {
           color $accentColor
     // 移动端滑动图标
     .slide-banner
-      margin-top 6rem
+      position relative
+      bottom 0
+      margin-top 10vh
       .banner-wrapper
         position relative
       .slide-banner-scroll
         min-height 1px
         overflow hidden
+        background rgba(0, 0, 0, .2)
+        backdrop-filter blur(5px)
       .slide-banner-wrapper
         height 300px
         .slide-item
@@ -446,31 +445,16 @@ export default {
             // color lighten($bannerTextColor,10%)
             color inherit
             .feature-img
-              width 8rem
-              height 8rem
+              width 20vh
+              height 20vh
             h2
-              font-size 1.1rem
-              font-weight 500
+              font-size 1.4rem
+              font-weight 700
               border-bottom none
               padding-bottom 0
             p
               opacity 0.8
               padding 0 0.8rem
-      .docs-wrapper
-        position absolute
-        bottom 25px
-        left 50%
-        transform translateX(-50%)
-        .doc
-          display inline-block
-          margin 0 4px
-          width 8px
-          height 8px
-          border-radius 50%
-          background var(--textColor)
-          opacity 0.9
-          &.active
-            opacity 0.5
   // 分页不在第一页时，隐藏banner栏
   .banner.hide-banner
     display none
@@ -520,6 +504,7 @@ export default {
 @media (max-width $MQMobile)
   .home-wrapper
     .banner
+      justify-content space-between
       .banner-conent
         .features
           display none !important
