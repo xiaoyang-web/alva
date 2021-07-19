@@ -8,9 +8,6 @@
     >
       <div
         class="banner-conent"
-        :style="
-          !homeData.features && !homeData.heroImage && `padding-top: 7rem`
-        "
       >
         <header class="hero">
           <img
@@ -105,6 +102,10 @@
         </div>
       </div>
       <!-- 移动端features块 e -->
+
+      <div class="cover-learn-more">
+        <span class="anchor iconfont icon-down" @click="scrollDown"></span>
+      </div>
     </div>
     <!-- banner块 e -->
 
@@ -172,6 +173,7 @@ import Pagination from '@theme/components/Pagination'
 import BloggerBar from '@theme/components/BloggerBar'
 import CategoriesBar from '@theme/components/CategoriesBar'
 import TagsBar from '@theme/components/TagsBar'
+import CatalogueVue from './Catalogue.vue';
 
 const MOBILE_DESKTOP_BREAKPOINT = 720 // refer to config.styl
 
@@ -332,6 +334,9 @@ export default {
         || document.documentElement.scrollTop
         || document.body.scrollTop
     },
+    scrollDown () {
+      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+    }
   },
 
 };
@@ -366,7 +371,7 @@ export default {
           margin 2rem auto 1.5rem
         h1
           margin 0
-          font-size 4.8rem
+          font-size 2.5rem
         .description, .action
           margin 2.4rem auto
         .description
@@ -405,8 +410,8 @@ export default {
           // color lighten($bannerTextColor,10%)
           color inherit
           .feature-img
-            width 10rem
-            height 10rem
+            width 7rem
+            height 7rem
             animation heart 1.2s ease-in-out 0s infinite alternate
             animation-play-state paused
           h2
@@ -445,9 +450,11 @@ export default {
             // color lighten($bannerTextColor,10%)
             color inherit
             .feature-img
+              margin-top 1rem
               width 20vh
               height 20vh
             h2
+              margin-top 0
               font-size 1.4rem
               font-weight 700
               border-bottom none
@@ -455,6 +462,21 @@ export default {
             p
               opacity 0.8
               padding 0 0.8rem
+
+    .cover-learn-more
+      position absolute
+      z-index 1
+      bottom 10px
+      left 0
+      width 100%
+      text-align center
+      animation down 1.6s linear infinite
+      span
+        font-size 1.4rem
+        color #fff
+        cursor pointer
+        &:hover
+          color $accentColor
   // 分页不在第一页时，隐藏banner栏
   .banner.hide-banner
     display none
@@ -478,6 +500,13 @@ export default {
       .custom-html-box
         padding 0
         overflow hidden
+@keyframes down
+  0%
+    margin-bottom 0
+    opacity 1
+  100%
+    margin-bottom -0.6rem
+    opacity 0.1
 @keyframes heart
   from
     transform translate(0, 0)
@@ -504,7 +533,6 @@ export default {
 @media (max-width $MQMobile)
   .home-wrapper
     .banner
-      justify-content space-between
       .banner-conent
         .features
           display none !important
