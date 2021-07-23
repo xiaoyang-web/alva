@@ -27,7 +27,7 @@ export default {
 
 <style lang="stylus" scoped>
 .theme-vdoing-content
-  margin 3rem auto
+  margin 0rem auto
   padding 1.5rem
   span
     font-size 6rem

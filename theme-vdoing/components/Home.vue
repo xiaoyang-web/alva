@@ -371,7 +371,7 @@ export default {
           margin 2rem auto 1.5rem
         h1
           margin 0
-          font-size 2.5rem
+          font-size 4rem
         .description, .action
           margin 2.4rem auto
         .description
@@ -502,10 +502,8 @@ export default {
         overflow hidden
 @keyframes down
   0%
-    margin-bottom 0
     opacity 1
   100%
-    margin-bottom -0.6rem
     opacity 0.1
 @keyframes heart
   from

@@ -1,14 +1,17 @@
 <template>
   <aside class="blogger-wrapper card-box">
+    <!-- 右侧头像部分 -->
     <div class="avatar">
-      <div class="avatar-top" :style="{background: bg}"></div>
       <img :src="blogger.avatar" alt="头像" title="我好看吗" />
     </div>
+
+    <!-- 作者名字及简介 -->
     <div class="blogger">
       <span class="name">{{ blogger.name }}</span>
       <span class="slogan">{{ blogger.slogan }}</span>
     </div>
 
+    <!-- 文章分类、标签 -->
     <div class="num-wrapper">
       <div class="item">
         <router-link to="/archives/">
@@ -30,6 +33,8 @@
       </div>
 
     </div>
+
+    <!-- 社交图标 -->
     <div class="icons" v-if="social && social.icons && social.icons.length">
       <a
         v-for="(item, index) in social.icons"
@@ -46,22 +51,12 @@
 
 <script>
 export default {
-  mounted () {
-    console.log(this.$categoriesAndTags);
-  },
   computed: {
     blogger () {
       return this.$themeConfig.blogger
     },
     social () {
       return this.$themeConfig.social
-    },
-    bg () {
-      if (!this.$themeConfig.blogger.avatar_top) {
-        return '#718971'
-      } else {
-        return `url(${this.$themeConfig.blogger.avatar_top})`
-      }
     }
   }
 }
@@ -69,64 +64,56 @@ export default {
 
 <style lang='stylus'>
 .blogger-wrapper
-  height auto
-  display inline-table
+  display flex
+  flex-direction column
   padding-top 0 !important
   overflow hidden
+  // 右侧头像部分
   .avatar
     width 100%
-    // height 235px
     overflow hidden
-    @media (max-width 900px)
-      // width 205px
-      // height 205px
-    .avatar-top
-      width 100%
-      height 7rem
-      background-repeat no-repeat
-      background-size 100% 100%
     img
       display block
       width 50%
       height 50%
-      margin -4rem auto 0;
-  .icons
-    display flex
-    // border 1px solid var(--borderColor)
-    border-top none
-    height 35px
-    line-height 35px
-    a
-      font-size 24px
-      color var(--textColor)
-      display block
-      float left
-      text-align center
-      opacity 0.8
-      &:hover
-        color $accentColor
+      margin 2rem auto 0;
+  // 作者名字及简介
   .blogger
-    padding 1rem 0.95rem
+    padding 1rem
     text-align center
     border-bottom 1px solid var(--borderColor)
     .name
-      font-size 1.3rem
       display block
-      margin-bottom 6px
+      font-size 1.6rem
+      font-weight bold
     .slogan
+      font-size 0.8rem
       color var(--textColor)
+  // 文章分类、标签
+  .icons
+    display flex
+    a
+      display block
+      flex 1
+      font-size 1.6rem
+      color var(--textColor)
+      text-align center
+      &:hover
+        color $accentColor
+  // 社交图标
   .num-wrapper
     display flex
+    width 100%
     margin 1rem auto
-    width 80%
     .item
-      width calc(100% / 3)
+      flex 1
       text-align center
       a
         color var(--textColor)
-        &:hover
-          color $accentColor
         .num
           display block
-          font-size 20px
+          font-size 1rem
+          font-weight bold
+        &:hover
+          color $accentColor
 </style>
