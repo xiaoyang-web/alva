@@ -254,18 +254,18 @@ export default {
     })
 
     // 向下滚动收起导航栏
-    let p = 0, t = 0;
-    window.addEventListener('scroll', _.throttle(() => {
-      if (!this.isSidebarOpen) { // 侧边栏关闭时
-        p = this.getScrollTop()
-        if (t < p && p > NAVBAR_HEIGHT) { // 向下滚动
-          this.hideNavbar = true
-        } else { // 向上
-          this.hideNavbar = false
-        }
-        setTimeout(() => { t = p }, 0)
-      }
-    }, 300))
+    // let p = 0, t = 0;
+    // window.addEventListener('scroll', _.throttle(() => {
+    //   if (!this.isSidebarOpen) { // 侧边栏关闭时
+    //     p = this.getScrollTop()
+    //     if (t < p && p > NAVBAR_HEIGHT) { // 向下滚动
+    //       this.hideNavbar = true
+    //     } else { // 向上
+    //       this.hideNavbar = false
+    //     }
+    //     setTimeout(() => { t = p }, 0)
+    //   }
+    // }, 300))
 
   },
   watch: {
