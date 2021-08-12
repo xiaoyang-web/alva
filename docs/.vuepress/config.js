@@ -6,9 +6,9 @@ module.exports = {
   theme: require.resolve('../../theme-vdoing'),
   title: 'alva-yky',
   description: 'A simple blog',
-  markdown: {
-    lineNumbers: true,
-  },
+  // markdown: {
+  //   lineNumbers: true,
+  // },
 
   head,
   plugins,
