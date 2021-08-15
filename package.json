@@ -12,6 +12,7 @@
     "vuepress": "^1.8.2",
     "vuepress-plugin-element-tabs": "^0.2.8",
     "vuepress-plugin-element-ui": "^1.1.0",
+    "vuepress-plugin-one-click-copy": "^1.0.5",
     "vuepress-theme-vdoing": "^1.8.3"
   },
   "dependencies": {

@@ -8314,6 +8314,11 @@ vuepress-plugin-element-ui@^1.1.0:
     element-ui "^2.13.0"
     markdown-it-container "^2.0.0"
 
+vuepress-plugin-one-click-copy@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/vuepress-plugin-one-click-copy/-/vuepress-plugin-one-click-copy-1.0.5.tgz#041e3b17802ec4a6cc2ede3f9f9624dbe9d94cb2"
+  integrity sha512-JXDgZ9wF4CPtKStdsuyakRqTFfKDXds3qfz9J5YqQ3WInUz5+7ykYrpT2KoqSOXM8TOtLaG3vlhDGUOY6o2y0g==
+
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
   resolved "https://registry.npmjs.org/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.3.tgz#6eff2d4c186cca917cc9f7df2b0af7de7c8c6438"
