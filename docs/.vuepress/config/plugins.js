@@ -1,3 +1,4 @@
 module.exports = [
-  'element-ui'
+  'element-ui',
+  'vuepress-plugin-element-tabs'
 ]
