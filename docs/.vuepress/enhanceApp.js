@@ -1,6 +1,7 @@
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueTypedJs from 'vue-typed-js'
+import axios from 'axios'
 
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -10,5 +11,6 @@ export default ({
 }) => {
   Vue.use(ElementUI)
   Vue.use(VueTypedJs)
+  Vue.prototype.$axios = axios
   // ...做一些其他的应用级别的优化
 }

@@ -347,15 +347,11 @@ export default {
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
     },
     initNotice () {
-      const xhr = new XMLHttpRequest()
-      xhr.open('get', 'https://v1.hitokoto.cn')
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          const obj = JSON.parse(xhr.responseText)
-          this.content = obj.hitokoto
-        }
-      }
-      xhr.send()
+      this.$axios.get('https://v1.hitokoto.cn').then((res) => {
+        this.content = res.data.hitokoto
+      }).catch((err) => {
+        console.log(err)
+      })
     }
   },
 

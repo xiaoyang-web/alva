@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "async-validator": "1.11.5",
+    "axios": "^0.21.1",
     "vue-typed-js": "^0.1.2"
   }
 }
