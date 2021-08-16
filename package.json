@@ -13,6 +13,7 @@
     "vuepress-plugin-element-tabs": "^0.2.8",
     "vuepress-plugin-element-ui": "^1.1.0",
     "vuepress-plugin-one-click-copy": "^1.0.5",
+    "vuepress-plugin-photo-swipe": "^1.19.1",
     "vuepress-theme-vdoing": "^1.8.3"
   },
   "dependencies": {

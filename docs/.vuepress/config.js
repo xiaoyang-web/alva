@@ -6,6 +6,11 @@ module.exports = {
   theme: require.resolve('../../theme-vdoing'),
   title: 'alva-yky',
   description: 'A simple blog',
+  locales: {
+    '/': {
+      lang: 'zh-CN'
+    }
+  },
   // markdown: {
   //   lineNumbers: true,
   // },

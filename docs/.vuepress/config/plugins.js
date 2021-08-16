@@ -10,5 +10,12 @@ module.exports = [
       duration: 1000,
       showInMobile: false
     }
+  ],
+  [
+    'photo-swipe',
+    {
+      container: '.theme-container',
+      selector: 'p img'
+    }
   ]
 ]

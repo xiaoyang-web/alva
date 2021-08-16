@@ -3,7 +3,7 @@
     <!-- banner块 s -->
     <div
       class="banner"
-      :class="{ 'hide-banner': !showBanner }"
+      :class="{ 'hide-banner': !show }"
       :style="bannerBgStyle"
     >
       <div
@@ -108,11 +108,16 @@
       </div>
     </div>
     <!-- banner块 e -->
-
-    <MainLayout>
+    <div class="notice-wrapper" :class="{'hide-notice': !show}">
+      <div class="notice">
+        <i class="iconfont icon-xihuan"></i>
+        <p class="notice-content" id="broad">{{ content }}</p>
+      </div>
+    </div>
+    <MainLayout :class="{'main-wrapper-spec': !show}">
       <template #mainLeft>
 
-        <Content class="theme-vdoing-content custom card-box" />
+        <Content class="theme-vdoing-content custom card-box" :class="{'hide-box': !show}" />
         
         <!-- 简约版文章列表 -->
         <UpdateArticle
@@ -190,8 +195,11 @@ export default {
       mark: 0,
 
       total: 0, // 总长
-      perPage: 10, // 每页长
-      currentPage: 1// 当前页
+      perPage: 5, // 每页长
+      currentPage: 1,// 当前页
+
+      // 每日一句
+      content: ''
     }
   },
   computed: {
@@ -207,7 +215,7 @@ export default {
       const { htmlModules } = this.$themeConfig
       return htmlModules ? htmlModules.homeSidebarB : ''
     },
-    showBanner () { // 当分页不在第一页时隐藏banner栏
+    show () { // 当分页不在第一页时隐藏banner栏
       return this.$route.query.p
         && this.$route.query.p != 1
         && (!this.homeData.postList || this.homeData.postList === 'detailed')
@@ -244,6 +252,7 @@ export default {
   components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination },
   created () {
     this.total = this.$sortPosts.length
+    this.initNotice()
   },
   beforeMount () {
     this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
@@ -336,6 +345,17 @@ export default {
     },
     scrollDown () {
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+    },
+    initNotice () {
+      const xhr = new XMLHttpRequest()
+      xhr.open('get', 'https://v1.hitokoto.cn')
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          const obj = JSON.parse(xhr.responseText)
+          this.content = obj.hitokoto
+        }
+      }
+      xhr.send()
     }
   },
 
@@ -482,10 +502,32 @@ export default {
     display none
     & + .main-wrapper
       margin-top: ($navbarHeight + 0.9rem)
+  .notice-wrapper
+    &.hide-notice
+      display none
+    max-width 1100px
+    margin 1.5rem auto 0
+    padding 0.9rem
+    box-sizing border-box
+    .notice
+      display flex
+      align-items center
+      padding 1rem
+      border 2px dashed var(--borderColor)
+      border-radius 1rem
+      i
+        padding-right 1rem
+        font-size 1.4rem
+      p
+        margin 0
   .main-wrapper
+    &-spec
+      margin-top 4.5rem
     margin-top 2rem
     .main-left
       .card-box
+        &.hide-box
+          display none
         margin-bottom 0.9rem
       .pagination
         margin-bottom 4rem

@@ -35,7 +35,6 @@
       <!-- <slot name="sidebar-top" #top />
       <slot name="sidebar-bottom" #bottom /> -->
     </Sidebar>
-
     <!-- 首页 -->
     <Home v-if="$page.frontmatter.home" />
 
