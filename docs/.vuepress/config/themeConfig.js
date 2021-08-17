@@ -21,6 +21,21 @@ module.exports = {
           { text: 'VUE进阶', link: '/advance/vue/' },
         ]
       }]
+    },
+    {
+      text: '面试题',
+      link: '/interview/',
+      icon: 'icon-mianshiti',
+      items: [{
+        text: 'HTML面试题',
+        link: '/interview/html/'
+      }, {
+        text: 'CSS面试题',
+        link: '/interview/css/'
+      }, {
+        text: 'JS面试题',
+        link: '/interview/js/'
+      }]
     }
   ],
   sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）

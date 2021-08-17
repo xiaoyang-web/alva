@@ -391,10 +391,13 @@ export default {
         .description, .action
           margin 2.4rem auto
         .description
+          span
+            height 100%
+          height 3rem
+          line-height 3rem
           justify-content center
           max-width 40rem
           font-size 2rem
-          line-height 1.3
           opacity 0.9
         .action-button
           display inline-block
