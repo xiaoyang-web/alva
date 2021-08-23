@@ -16,8 +16,11 @@
 
     <!--Vdoing主题遵循MIT协议，完全开源且免费。如果您对主题的修改并不大，希望您保留主题的链接。-->
     <template v-if="footer">
-      Copyright © {{ footer.createYear }}
-      <span v-html="footer.copyrightInfo"></span>
+      <div>
+        Copyright © {{ footer.createYear }}
+        <span v-html="footer.copyrightInfo"></span>
+      </div>
+      
     </template>
   </div>
 </template>
@@ -38,9 +41,15 @@ export default {
 <style lang='stylus'>
 // $mobileSidebarWidth = $sidebarWidth * 0.82
 .footer
-  padding 5rem 1.5rem 2.5rem
+  display flex
+  flex-direction column
+  justify-content center
+  height 8rem
+  padding 0 1.5rem
+  margin-top -8rem
   text-align center
   color #666
+  border-top 2px dashed var(--borderColor, #ccc)
   box-sizing border-box
   font-size 0.85rem
   transition all 0.2s ease
@@ -48,7 +57,7 @@ export default {
     margin-bottom 12px
     .iconfont
       padding 0 10px
-      font-size 1.3rem
+      font-size 2rem
   a
     color inherit
     &:hover

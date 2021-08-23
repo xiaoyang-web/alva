@@ -360,6 +360,9 @@ export default {
 
 <style lang="stylus" scoped>
 .home-wrapper
+  min-height 100vh
+  padding-bottom 8rem
+  box-sizing border-box
   .banner
     display flex
     flex-direction column
@@ -521,7 +524,8 @@ export default {
         margin 0
   .main-wrapper
     &-spec
-      margin-top 4.5rem
+      margin-top 0
+      padding-top 4.5rem
     margin-top 2rem
     .main-left
       .card-box

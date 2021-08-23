@@ -116,8 +116,10 @@ export default {
 @require '../styles/wrapper.styl'
 
 .page
-  padding-bottom 2rem
+  min-height 100vh
+  padding-bottom 8rem
   display block
+  box-sizing border-box
   @media (max-width $MQMobile)
     padding-top $navbarHeight
   @media (min-width $MQMobile)
