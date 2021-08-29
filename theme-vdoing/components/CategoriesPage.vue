@@ -42,7 +42,7 @@ export default {
     return {
       category: '',
       total: 0, // 总长
-      perPage: 10, // 每页长
+      perPage: 5, // 每页长
       currentPage: 1// 当前页
     }
   },
