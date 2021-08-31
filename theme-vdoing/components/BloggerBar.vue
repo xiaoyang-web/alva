@@ -34,18 +34,6 @@
 
     </div>
 
-    <!-- 社交图标 -->
-    <div class="icons" v-if="social && social.icons && social.icons.length">
-      <a
-        v-for="(item, index) in social.icons"
-        :key="index"
-        :href="item.link"
-        :title="item.title"
-        :class="['iconfont', item.iconClass]"
-        :style="{ width: 100 / social.icons.length + '%' }"
-        target="_blank"
-      />
-    </div>
   </aside>
 </template>
 
@@ -90,17 +78,6 @@ export default {
       font-size 0.8rem
       color var(--textColor)
   // 文章分类、标签
-  .icons
-    display flex
-    a
-      display block
-      flex 1
-      font-size 1.6rem
-      color var(--textColor)
-      text-align center
-      &:hover
-        color $accentColor
-  // 社交图标
   .num-wrapper
     display flex
     width 100%

@@ -8,16 +8,6 @@
         <h3>{{blogger.name}}</h3>
         <span>{{blogger.slogan}}</span>
       </div>
-      <!-- 社交icon -->
-      <div class="icons" v-if="social && social.icons && social.icons.length">
-        <a
-          :href="item.link"
-          :title="item.title"
-          :class="['iconfont', item.iconClass]"
-          v-for="(item, index) in social.icons"
-          :key="index"
-          target="_blank"></a>
-      </div>
     </div>
     
     <!-- 移动端Nav -->
@@ -88,24 +78,15 @@ export default {
     img
       width 4rem
       height 4rem
-      margin-right 2rem
+      margin-right 1rem
     .blogger-info
       h3
-        margin 0.2rem 0
+        margin 0
         font-size 1.4rem
         font-weight bold
       span
         font-size 0.8rem
-    .icons
-      display flex
-      width 80%
-      margin-top 1rem
-      .iconfont
-        flex 1
-        font-size 1.6rem
-        color #777
-        &:not(:last-child)
-          padding-right 0.6rem
+
   .sidebar-slot
     margin-bottom: -0.5rem;
     font-size: 0.8rem;
