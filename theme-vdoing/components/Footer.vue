@@ -49,7 +49,7 @@ export default {
   margin-top -8rem
   text-align center
   color #666
-  border-top 2px dashed var(--borderColor, #ccc)
+  // border-top 2px dashed var(--borderColor, #ccc)
   box-sizing border-box
   font-size 0.85rem
   transition all 0.2s ease
