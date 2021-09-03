@@ -79,7 +79,7 @@ module.exports = (options, ctx) => {
     },
 
     plugins: [
-      ['@vuepress/active-header-links', options.activeHeaderLinks],
+      // ['@vuepress/active-header-links', options.activeHeaderLinks],
       '@vuepress/search',
       '@vuepress/plugin-nprogress',
       ['smooth-scroll', enableSmoothScroll],

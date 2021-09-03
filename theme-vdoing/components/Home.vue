@@ -21,6 +21,7 @@
           <vue-typed-js
             class="description"
             v-if="homeData.tagline"
+            ref="typing"
             :strings="[homeData.tagline, homeData.tagline1, homeData.tagline2]" 
             :loop="true"
             :typeSpeed="200"
@@ -281,6 +282,7 @@ export default {
   beforeDestroy () {
     clearTimeout(this.playTimer)
     this.slide && this.slide.destroy()
+    this.$refs.typing.typedObj.destroy()
   },
   watch: {
     '$route.query.p' () {
